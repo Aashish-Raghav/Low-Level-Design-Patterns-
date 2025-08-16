@@ -6,6 +6,7 @@ This repository contains implementations of Low-Level Design (LLD) patterns in C
 
 - [StrategyDesignPattern.cpp](StrategyDesignPattern.cpp): Implementation of the Strategy Design Pattern.
 - [ObserverPattern/](ObserverPattern/): Implementation of the Observer Design Pattern.
+- [DecoratorPattern/](DecoratorPattern/): Implementation of the Decorator Design Pattern.
 
 ## Strategy Design Pattern
 
@@ -62,4 +63,44 @@ Observers (email and mobile) are registered to an observable (iPhone stock). Whe
 mail sent to : xyz@gmail.com with message: Product is in stock hurry up
 mail sent to : abc@gmail.com with message: Product is in stock hurry up
 SMS sent to : 1234567890 with message: Product is in stock hurry up
+```
+
+## Decorator Design Pattern
+
+The Decorator Design Pattern allows you to add new functionality to objects dynamically without altering their structure. This example demonstrates how to decorate pizzas with extra toppings.
+
+### Implementation Files
+
+- `DecoratorPattern/Base/BasePizza.h`: Abstract base class for pizzas.
+- `DecoratorPattern/Base/VegDelight.h`: VegDelight pizza implementation.
+- `DecoratorPattern/Base/VegMagrita.h`: VegMargherita pizza implementation.
+- `DecoratorPattern/Decorator/decorator.h`: Abstract decorator class.
+- `DecoratorPattern/Decorator/ExtraCheese.h`: Extra cheese topping decorator.
+- `DecoratorPattern/Decorator/Mushroom.h`: Mushroom topping decorator.
+- `DecoratorPattern/shop.cpp`: Example usage.
+
+### Example Usage
+
+
+Create a pizza object and wrap it with different decorators to add toppings. Each decorator adds its own cost to the base pizza. You can chain multiple decorators to combine toppings and calculate the final cost.
+
+
+### How to Run
+
+1. Compile all files in the `DecoratorPattern` directory:
+    ```sh
+    g++ DecoratorPattern/shop.cpp -o shop
+    ```
+
+2. Run the executable:
+    ```sh
+    ./shop
+    ```
+
+### Expected Output
+
+```
+Cost of VegDelight: 300
+Cost of VegDelight with Mushroom: 330
+Cost of VegDelight with Mushroom and Extra Cheese: 360
 ```
