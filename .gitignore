@@ -1,0 +1,30 @@
+# Ignore build output
+*.out
+*.o
+*.obj
+*.exe
+*.a
+*.so
+*.dll
+
+# Ignore debugging files
+*.log
+*.cache
+*.pdb
+
+# Ignore editor/IDE settings
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore CMake or Make build dirs
+build/
+cmake-build-*/
+
+# Ignore backup files
+*~
