@@ -8,6 +8,7 @@ This repository contains implementations of Low-Level Design (LLD) patterns in C
 - [ObserverPattern/](ObserverPattern/): Implementation of the Observer Design Pattern.
 - [DecoratorPattern/](DecoratorPattern/): Implementation of the Decorator Design Pattern.
 - [FactoryPattern/](FactoryPattern/): Implementation of the Factory Design Pattern.
+- [AbstractFactoryPattern/](AbstractFactoryPattern/): Implementation of the Abstract Factory Design Pattern.
 
 ## Strategy Design Pattern
 
@@ -139,4 +140,42 @@ The client requests a shape from the factory by specifying the type. The factory
 ```
 Circle
 Square
+```
+
+## Abstract Factory Design Pattern
+
+The Abstract Factory Design Pattern provides an interface for creating families of related or dependent objects without specifying their concrete classes. This example demonstrates how to create platform-specific UI components (like buttons) using factories.
+
+### Implementation Files
+
+- `AbstractFactoryPattern/UIFactory.h`: Abstract factory interface for UI components.
+- `AbstractFactoryPattern/WindowsFactory.h`: Concrete factory for Windows UI.
+- `AbstractFactoryPattern/MacOSFactory.h`: Concrete factory for MacOS UI.
+- `AbstractFactoryPattern/AbstractButton.h`: Abstract button interface.
+- `AbstractFactoryPattern/Button.h`: Concrete button implementations for Windows and MacOS.
+- `AbstractFactoryPattern/client.cpp`: Example usage.
+
+### Example Usage
+
+The client uses a factory to create UI components for a specific platform. The same client code works for different platforms by switching the factory.
+
+### How to Run
+
+1. Compile all files in the `AbstractFactoryPattern` directory:
+    ```sh
+    g++ AbstractFactoryPattern/client.cpp -o abstractfactory
+    ```
+
+2. Run the executable:
+    ```sh
+    ./abstractfactory
+    ```
+
+### Expected Output
+
+```
+Using Windows Factory:
+Rendering Windows Button
+Using MacOS Factory:
+Rendering MacOS Button
 ```
