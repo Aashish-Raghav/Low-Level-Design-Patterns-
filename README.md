@@ -7,6 +7,7 @@ This repository contains implementations of Low-Level Design (LLD) patterns in C
 - [StrategyDesignPattern.cpp](StrategyDesignPattern.cpp): Implementation of the Strategy Design Pattern.
 - [ObserverPattern/](ObserverPattern/): Implementation of the Observer Design Pattern.
 - [DecoratorPattern/](DecoratorPattern/): Implementation of the Decorator Design Pattern.
+- [FactoryPattern/](FactoryPattern/): Implementation of the Factory Design Pattern.
 
 ## Strategy Design Pattern
 
@@ -103,4 +104,39 @@ Create a pizza object and wrap it with different decorators to add toppings. Eac
 Cost of VegDelight: 300
 Cost of VegDelight with Mushroom: 330
 Cost of VegDelight with Mushroom and Extra Cheese: 360
+```
+
+## Factory Design Pattern
+
+The Factory Design Pattern provides a way to create objects without exposing the instantiation logic to the client. This example demonstrates how to create different shapes using a factory class.
+
+### Implementation Files
+
+- `FactoryPattern/Shape.h`: Abstract base class for shapes.
+- `FactoryPattern/Circle.h`: Circle shape implementation.
+- `FactoryPattern/Square.h`: Square shape implementation.
+- `FactoryPattern/ShapeFactory.h`: Factory class to create shapes.
+- `FactoryPattern/main.cpp`: Example usage.
+
+### Example Usage
+
+The client requests a shape from the factory by specifying the type. The factory returns the appropriate shape object, and the client can use it without knowing the creation details.
+
+### How to Run
+
+1. Compile all files in the `FactoryPattern` directory:
+    ```sh
+    g++ FactoryPattern/main.cpp -o factory
+    ```
+
+2. Run the executable:
+    ```sh
+    ./factory
+    ```
+
+### Expected Output
+
+```
+Circle
+Square
 ```
